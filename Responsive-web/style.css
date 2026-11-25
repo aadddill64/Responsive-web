@@ -1,0 +1,121 @@
+/* Nova Studio — Responsive Web Design Week 2 Project */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ink: #17251f;
+  --muted: #66736c;
+  --green: #1d684e;
+  --lime: #d9f36b;
+  --cream: #f7f8f2;
+  --white: #ffffff;
+  --line: #e4e9e2;
+  --shadow: 0 22px 60px rgba(24, 52, 39, .12);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--white); line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+.site-header { background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); }
+.navbar, .nav-links, .brand, .hero-actions, .footer-inner { display: flex; align-items: center; }
+.navbar { min-height: 78px; justify-content: space-between; }
+.brand { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.15rem; gap: 8px; }
+.brand > span:last-child { color: var(--green); margin-left: -7px; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--green); color: white; }
+.nav-links { list-style: none; gap: 34px; font-size: .92rem; font-weight: 600; }
+.nav-links a:not(.nav-cta):hover, .footer a:hover { color: var(--green); }
+.nav-cta { background: var(--ink); color: white; padding: 11px 18px; border-radius: 7px; }
+.menu-toggle, .menu-button { display: none; }
+.hero { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 55px; padding-block: 90px 105px; }
+.eyebrow { color: var(--green); font-size: .72rem; letter-spacing: .16em; font-weight: 700; margin-bottom: 18px; }
+h1, h2, h3 { font-family: 'Manrope', sans-serif; line-height: 1.12; letter-spacing: -.045em; }
+h1 { font-size: clamp(2.8rem, 5vw, 4.65rem); font-weight: 800; }
+h1 span, .about h2 span { color: var(--green); }
+.hero-text { color: var(--muted); max-width: 490px; font-size: 1.08rem; margin-top: 24px; }
+.hero-actions { gap: 25px; flex-wrap: wrap; margin-top: 32px; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 21px; border-radius: 7px; font-weight: 700; transition: transform .2s, background .2s; }
+.button:hover { transform: translateY(-3px); }
+.button-primary { background: var(--green); color: white; }
+.text-link { font-weight: 700; font-size: .9rem; }
+.text-link span { color: var(--green); font-size: 1.2rem; margin-left: 5px; }
+.hero-note { color: var(--muted); font-size: .8rem; margin-top: 42px; }
+.note-dot { display: inline-block; width: 8px; height: 8px; background: #9bc64c; border-radius: 50%; margin-right: 8px; }
+.hero-art { min-height: 440px; position: relative; display: grid; place-items: center; background: #eaf0e6; border-radius: 48% 48% 12px 12px; overflow: hidden; }
+.art-card { position: absolute; width: 58%; height: 72%; border-radius: 12px; }
+.card-back { background: var(--lime); transform: rotate(10deg) translate(24px, 4px); }
+.card-front { background: var(--green); color: white; padding: 24px; box-shadow: var(--shadow); transform: rotate(-5deg); }
+.art-top { display: flex; justify-content: space-between; font-size: .58rem; letter-spacing: .13em; }
+.art-circle { width: 145px; height: 145px; border-radius: 50%; background: var(--lime); margin: 36px auto 20px; position: relative; }
+.art-circle:after { content: ''; position: absolute; width: 70px; height: 70px; border: 2px solid var(--green); border-radius: 50%; left: 37px; top: 37px; }
+.art-line { height: 5px; background: rgba(255,255,255,.65); border-radius: 9px; margin: 10px auto; width: 65%; }
+.line-two { width: 42%; }
+.art-bottom { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.5rem; line-height: 1; margin-top: 25px; letter-spacing: -.04em; }
+.floating-tag { position: absolute; right: 4%; bottom: 13%; background: white; padding: 13px 17px; border-radius: 8px; box-shadow: var(--shadow); font-size: .78rem; font-weight: 700; transform: rotate(3deg); }
+.section { padding-block: 90px; }
+.services { background: var(--cream); }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 42px; }
+h2 { font-size: clamp(2.1rem, 4vw, 3.2rem); }
+.section-heading > p { color: var(--muted); max-width: 390px; padding-bottom: 5px; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.service-card { background: white; padding: 30px; border: 1px solid var(--line); border-radius: 10px; min-height: 245px; }
+.service-card.featured { background: var(--green); color: white; }
+.service-icon { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 10px; background: #edf4e9; color: var(--green); font-size: 1.35rem; margin-bottom: 28px; }
+.featured .service-icon { background: var(--lime); }
+.service-card h3 { font-size: 1.35rem; margin-bottom: 10px; }
+.service-card p { color: var(--muted); font-size: .9rem; }
+.featured p { color: rgba(255,255,255,.78); }
+.service-card > span { display: block; margin-top: 25px; color: #8b9a90; font-size: .65rem; letter-spacing: .12em; font-weight: 700; }
+.featured > span { color: var(--lime); }
+.about { display: grid; grid-template-columns: 70px 1fr 1fr; gap: 35px; align-items: start; }
+.about-number { color: var(--green); font-weight: 700; border-top: 1px solid var(--green); padding-top: 12px; }
+.about-copy { color: var(--muted); max-width: 440px; padding-top: 35px; }
+.contact { background: var(--green); color: white; }
+.contact .eyebrow { color: var(--lime); }
+.contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+.button-light { background: var(--lime); color: var(--ink); }
+.footer { border-top: 1px solid var(--line); padding-block: 24px; }
+.footer-inner { justify-content: space-between; gap: 20px; }
+.footer p, .footer-inner > a:last-child { color: var(--muted); font-size: .78rem; }
+
+/* Tablet layout */
+@media (max-width: 850px) {
+  .hero { gap: 28px; padding-block: 70px 80px; }
+  .hero-art { min-height: 370px; }
+  .art-circle { width: 115px; height: 115px; margin-top: 28px; }
+  .art-circle:after { width: 56px; height: 56px; left: 28px; top: 28px; }
+  .section { padding-block: 70px; }
+  .about { grid-template-columns: 45px 1fr; }
+  .about-copy { grid-column: 2; padding-top: 0; }
+  .nav-links { gap: 20px; }
+}
+
+/* Mobile navigation and single-column layout */
+@media (max-width: 600px) {
+  .container { width: min(100% - 36px, 480px); }
+  .navbar { min-height: 68px; }
+  .menu-button { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+  .menu-button span { width: 23px; height: 2px; background: var(--ink); display: block; }
+  .nav-links { display: none; position: absolute; top: 67px; left: 0; right: 0; background: white; padding: 22px 24px 26px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 18px; }
+  .menu-toggle:checked ~ .nav-links { display: flex; }
+  .nav-cta { display: inline-block; text-align: center; }
+  .hero { grid-template-columns: 1fr; padding-block: 58px 65px; gap: 42px; }
+  h1 { font-size: clamp(2.55rem, 12vw, 3.5rem); }
+  .hero-text { font-size: 1rem; }
+  .hero-art { min-height: 350px; }
+  .art-card { width: 61%; height: 74%; }
+  .section { padding-block: 62px; }
+  .section-heading { display: block; }
+  .section-heading > p { margin-top: 20px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .service-card { min-height: auto; }
+  .about { grid-template-columns: 35px 1fr; gap: 20px; }
+  .about-copy { grid-column: 1 / -1; padding-top: 5px; }
+  .contact-inner { align-items: flex-start; flex-direction: column; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 360px) {
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 17px; }
+  .hero-art { min-height: 300px; }
+  .art-card { width: 66%; }
+  .floating-tag { font-size: .68rem; }
+}
